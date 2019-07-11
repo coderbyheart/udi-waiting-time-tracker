@@ -1,0 +1,64 @@
+{
+  "name": "@coderbyheart/udi-waiting-time-tracker",
+  "version": "0.0.0-development",
+  "description": "Report changes in UDI waiting time for application for work immigration to Slack",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coderbyheart/udi-waiting-time-tracker.git"
+  },
+  "author": "Markus Tacker <m@coderbyheart.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/coderbyheart/udi-waiting-time-tracker/issues"
+  },
+  "homepage": "https://github.com/coderbyheart/udi-waiting-time-tracker#readme",
+  "devDependencies": {
+    "@aws-cdk/aws-appsync": "^0.39.0",
+    "@aws-cdk/aws-cognito": "^0.39.0",
+    "@aws-cdk/aws-dynamodb": "^0.39.0",
+    "@aws-cdk/aws-events-targets": "^0.39.0",
+    "@aws-cdk/aws-iam": "^0.39.0",
+    "@aws-cdk/aws-logs": "^0.39.0",
+    "@aws-cdk/aws-s3": "^0.39.0",
+    "@commitlint/cli": "^8.0.0",
+    "@commitlint/config-angular": "^8.0.0",
+    "@nrfcloud/package-layered-lambdas": "^1.1.1",
+    "@nrfcloud/tslint-config": "^3.10.0",
+    "@types/aws-lambda": "^8.10.28",
+    "@types/jsdom": "^12.2.4",
+    "@types/node": "^12.0.10",
+    "@types/node-fetch": "^2.3.7",
+    "aws-cdk": "^0.39.0",
+    "husky": "^3.0.0",
+    "lint-staged": "^9.2.0",
+    "prettier": "^1.18.0",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.2"
+  },
+  "dependencies": {
+    "@aws-cdk/core": "^0.39.0",
+    "@aws-sdk/client-dynamodb-v2-node": "0.1.0-preview.2",
+    "jsdom": "^15.1.1",
+    "node-fetch": "^2.6.0"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -e",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "prettier --write",
+      "tslint --project ./tsconfig.json --fix",
+      "git add"
+    ]
+  },
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
+  }
+}
