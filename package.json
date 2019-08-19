@@ -16,13 +16,13 @@
   },
   "homepage": "https://github.com/coderbyheart/udi-waiting-time-tracker#readme",
   "devDependencies": {
-    "@aws-cdk/aws-appsync": "^0.39.0",
-    "@aws-cdk/aws-cognito": "^0.39.0",
-    "@aws-cdk/aws-dynamodb": "^0.39.0",
-    "@aws-cdk/aws-events-targets": "^0.39.0",
-    "@aws-cdk/aws-iam": "^0.39.0",
-    "@aws-cdk/aws-logs": "^0.39.0",
-    "@aws-cdk/aws-s3": "^0.39.0",
+    "@aws-cdk/aws-appsync": "^1.4.0",
+    "@aws-cdk/aws-cognito": "^1.4.0",
+    "@aws-cdk/aws-dynamodb": "^1.4.0",
+    "@aws-cdk/aws-events-targets": "^1.4.0",
+    "@aws-cdk/aws-iam": "^1.4.0",
+    "@aws-cdk/aws-logs": "^1.4.0",
+    "@aws-cdk/aws-s3": "^1.4.0",
     "@commitlint/cli": "^8.0.0",
     "@commitlint/config-angular": "^8.0.0",
     "@nrfcloud/package-layered-lambdas": "^1.1.1",
@@ -31,7 +31,7 @@
     "@types/jsdom": "^12.2.4",
     "@types/node": "^12.0.10",
     "@types/node-fetch": "^2.3.7",
-    "aws-cdk": "^0.39.0",
+    "aws-cdk": "^1.4.0",
     "husky": "^3.0.0",
     "lint-staged": "^9.2.0",
     "prettier": "^1.18.0",
@@ -39,7 +39,7 @@
     "typescript": "^3.5.2"
   },
   "dependencies": {
-    "@aws-cdk/core": "^0.39.0",
+    "@aws-cdk/core": "^1.4.0",
     "@aws-sdk/client-dynamodb-v2-node": "0.1.0-preview.2",
     "jsdom": "^15.1.1",
     "node-fetch": "^2.6.0"
