@@ -1,5 +1,7 @@
 ## Setup
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/coderbyheart/udi-waiting-time-tracker.svg)](https://greenkeeper.io/)
+
 	npm ci           # install dependencies
 	npx tsc          # compile the TypeScript files
 	
