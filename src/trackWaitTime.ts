@@ -73,6 +73,7 @@ export const handler = async () => {
 		method: 'POST',
 		body: JSON.stringify({
 			text: `The UDI wait time changed to: *${waitTimeString}*! <${UDI_URL}|Click here> for details.`,
+			// eslint-disable-next-line @typescript-eslint/camelcase
 			icon_url: 'https://www.udi.no/Resources/Internal/img/udi_logo.png',
 			username: 'UDI',
 		}),

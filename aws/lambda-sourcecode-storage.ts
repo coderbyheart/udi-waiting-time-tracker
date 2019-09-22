@@ -22,7 +22,7 @@ export class LambdaSourcecodeStorageStack extends Stack {
 		})
 	}
 
-	static getBucketName = (id: string): Promise<string> =>
+	static getBucketName = async (id: string): Promise<string> =>
 		cf
 			.describeStacks({
 				StackName: id,

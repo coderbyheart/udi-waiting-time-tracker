@@ -3,14 +3,19 @@ import { LogGroup, RetentionDays } from '@aws-cdk/aws-logs'
 import { promises as fs } from 'fs'
 import { App, Duration, RemovalPolicy, Stack } from '@aws-cdk/core'
 import * as path from 'path'
-import { AttributeType, BillingMode, StreamViewType, Table } from '@aws-cdk/aws-dynamodb'
+import {
+	AttributeType,
+	BillingMode,
+	StreamViewType,
+	Table,
+} from '@aws-cdk/aws-dynamodb'
 import { Bucket } from '@aws-cdk/aws-s3'
 import { Code, Function, LayerVersion, Runtime } from '@aws-cdk/aws-lambda'
 import { lambdas, Lambdas } from './lambdas'
 import { LambdaSourcecodeStorageStack } from './lambda-sourcecode-storage'
-import { packBaseLayer } from '@nrfcloud/package-layered-lambdas'
-import { LambdaFunction } from '@aws-cdk/aws-events-targets';
-import { Rule, Schedule } from '@aws-cdk/aws-events';
+import { packBaseLayer } from '@bifravst/package-layered-lambdas'
+import { LambdaFunction } from '@aws-cdk/aws-events-targets'
+import { Rule, Schedule } from '@aws-cdk/aws-events'
 
 const STACK_ID = process.env.STACK_ID || 'udi-waiting-time'
 
@@ -86,12 +91,12 @@ export class UdiWaitingTimeStack extends Stack {
 			description: 'Check the wait time',
 			enabled: true,
 			targets: [new LambdaFunction(trackWaitTime)],
-		});
+		})
 
 		trackWaitTime.addPermission('InvokeByEvents', {
 			principal: new ServicePrincipal('events.amazonaws.com'),
 			sourceArn: rule.ruleArn,
-		});
+		})
 
 		new LogGroup(this, `LogGroup`, {
 			retention: RetentionDays.ONE_WEEK,

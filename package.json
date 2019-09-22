@@ -3,7 +3,8 @@
   "version": "0.0.0-development",
   "description": "Report changes in UDI waiting time for application for work immigration to Slack",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --ext .js,.ts src/** aws/**/*.ts"
   },
   "repository": {
     "type": "git",
@@ -23,20 +24,16 @@
     "@aws-cdk/aws-iam": "^0.39.0",
     "@aws-cdk/aws-logs": "^0.39.0",
     "@aws-cdk/aws-s3": "^0.39.0",
+    "@bifravst/code-style": "^4.0.2",
+    "@bifravst/package-layered-lambdas": "^2.0.0",
     "@commitlint/cli": "^8.0.0",
     "@commitlint/config-angular": "^8.0.0",
-    "@nrfcloud/package-layered-lambdas": "^1.1.1",
-    "@nrfcloud/tslint-config": "^3.10.0",
     "@types/aws-lambda": "^8.10.28",
     "@types/jsdom": "^12.2.4",
     "@types/node": "^12.0.10",
     "@types/node-fetch": "^2.3.7",
     "aws-cdk": "^0.39.0",
-    "husky": "^3.0.0",
-    "lint-staged": "^9.2.0",
-    "prettier": "^1.18.0",
-    "tslint": "^5.18.0",
-    "typescript": "^3.5.2"
+    "husky": "^3.0.0"
   },
   "dependencies": {
     "@aws-cdk/core": "^0.39.0",
@@ -53,7 +50,11 @@
   "lint-staged": {
     "*.ts": [
       "prettier --write",
-      "tslint --project ./tsconfig.json --fix",
+      "eslint --ext .js,.ts",
+      "git add"
+    ],
+    "*.{md,json,yaml,yml,js}": [
+      "prettier --write",
       "git add"
     ]
   },
